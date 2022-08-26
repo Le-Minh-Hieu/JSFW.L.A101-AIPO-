@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/JSFW.L.A101/JSFW-L-A101.iml" filepath="$PROJECT_DIR$/JSFW.L.A101/JSFW-L-A101.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/JSFW.L.A101-AIPO-.iml" filepath="$PROJECT_DIR$/.idea/JSFW.L.A101-AIPO-.iml" />
+    </modules>
+  </component>
+</project>

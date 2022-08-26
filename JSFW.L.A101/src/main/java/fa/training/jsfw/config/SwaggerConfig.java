@@ -10,7 +10,7 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
 @Configuration
-public class SpringFoxConfig {
+public class SwaggerConfig {
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -18,12 +18,5 @@ public class SpringFoxConfig {
                 .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.any())
                 .build();
-    }
-    @Bean
-    public ModelMapper modelMapper() {
-        ModelMapper modelMapper = new ModelMapper();
-        modelMapper.getConfiguration()
-                .setMatchingStrategy(MatchingStrategies.STRICT);
-        return modelMapper;
     }
 }

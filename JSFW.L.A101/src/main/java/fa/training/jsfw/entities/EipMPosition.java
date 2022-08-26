@@ -1,5 +1,8 @@
 package fa.training.jsfw.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -20,11 +23,12 @@ public class EipMPosition {
     @Column
     private String positionName;
     @Column
-    private int sort;
+    private Integer sort;
     @Column
     private LocalDateTime createDate;
     @Column
     private LocalDateTime updateDate;
     @OneToMany(mappedBy = "eipMPosition")
+    @JsonManagedReference
     List<TurbineUser> turbineUsers;
 }

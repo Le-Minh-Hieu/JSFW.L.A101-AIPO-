@@ -11,6 +11,4 @@ public interface TurbineUserService {
     TurbineUser findById(Integer id);
     List<TurbineUser> getAll();
     void delete(Integer id);
-
-    DepartmentsPositionsDTO getDepartmentsPositions();
 }

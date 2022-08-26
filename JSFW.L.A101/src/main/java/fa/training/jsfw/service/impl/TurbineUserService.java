@@ -45,12 +45,4 @@ class TurbineUserServiceImpl implements TurbineUserService {
     public void delete(Integer id) {
         turbineUserRepository.deleteById(id);
     }
-
-    @Override
-    public DepartmentsPositionsDTO getDepartmentsPositions() {
-        DepartmentsPositionsDTO departmentsPositionsDTO = new DepartmentsPositionsDTO();
-        departmentsPositionsDTO.setDepartments(departmentRepository.findAll());
-        departmentsPositionsDTO.setPositions(eipMPositionRepository.findAll());
-        return departmentsPositionsDTO;
-    }
 }

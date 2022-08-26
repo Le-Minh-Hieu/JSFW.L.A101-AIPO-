@@ -1,5 +1,7 @@
 package fa.training.jsfw.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -41,10 +43,6 @@ public class TurbineUser {
     @Column
     private LocalDateTime passwordChanged;
     @Column
-    private Integer companyId;
-    @Column
-    private Integer positionId;
-    @Column
     private String inTelephone;
     @Column
     private String outTelephone;
@@ -84,5 +82,6 @@ public class TurbineUser {
 
     @ManyToOne
     @JoinColumn(name="positionId", insertable=false, updatable=false)
+    @JsonBackReference
     private EipMPosition eipMPosition;
 }

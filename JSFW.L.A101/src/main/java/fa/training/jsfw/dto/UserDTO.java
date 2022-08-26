@@ -5,7 +5,10 @@ import fa.training.jsfw.entities.EipMPosition;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 @Setter
@@ -17,17 +20,28 @@ import java.time.LocalDateTime;
 public class UserDTO {
 
     private Long userId;
+    @Size(min=0,max=32)
     @NotEmpty(message = "Login name cannot be empty.")
     private String loginName;
+
+    @Size(min=0,max=20)
     @NotEmpty(message = "Login name cannot be empty.")
     private String passwordValue;
-    @NotEmpty(message = "Login name cannot be empty.")
+
+    @NotEmpty(message = "First name cannot be empty.")
+    @Size(min=0,max=99)
     private String firstname;
-    @NotEmpty(message = "Login name cannot be empty.")
+
+    @Size(min=0,max=99)
+    @NotEmpty(message = "Last name cannot be empty.")
     private String lastname;
-    @NotEmpty(message = "Login name cannot be empty.")
+
+    @Size(min=0,max=99)
+    @Email(message="Email is in wrong format.")
+    @NotEmpty(message = "Email cannot be empty.")
     private String email;
-    @NotEmpty(message = "Login name cannot be empty.")
+
+    @NotEmpty(message = "Confirm password cannot be empty.")
     private String confirmValue;
 
     private LocalDateTime modified;
@@ -43,20 +57,29 @@ public class UserDTO {
     private LocalDateTime passwordChanged;
 
     private Integer companyId;
-
     private Integer positionId;
-    @NotEmpty(message = "Login name cannot be empty.")
+
+    @Pattern(regexp="(^$|[0-9]{10})", message = "Phone is in wrong format.")
+    @NotEmpty(message = "In phone number cannot be empty.")
     private String inTelephone;
-    @NotEmpty(message = "Login name cannot be empty.")
+
+    @Pattern(regexp="(^$|[0-9]{10})", message = "Phone is in wrong format.")
+    @NotEmpty(message = "Outside phone number cannot be empty.")
     private String outTelephone;
+
     @NotEmpty(message = "Login name cannot be empty.")
     private String cellularPhone;
+
     @NotEmpty(message = "Login name cannot be empty.")
     private String cellularMail;
 
     private String cellularUid;
+
+    @Size(min=0,max=99)
     @NotEmpty(message = "Login name cannot be empty.")
     private String firstNameKana;
+
+    @Size(min=0,max=99)
     @NotEmpty(message = "Login name cannot be empty.")
     private String lastNameKana;
 

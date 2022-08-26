@@ -42,9 +42,4 @@ public class TurbineUserController {
     void delete(@PathVariable Integer id) {
         turbineUserService.delete(id);
     }
-    @GetMapping("/add")
-    @ResponseStatus(HttpStatus.OK)
-    DepartmentsPositionsDTO getDepartmentsPositions() {
-        return turbineUserService.getDepartmentsPositions();
-    }
 }

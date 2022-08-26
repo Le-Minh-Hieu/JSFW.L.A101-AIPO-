@@ -1,5 +1,7 @@
 package fa.training.jsfw.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -45,6 +47,7 @@ public class EipMCompany {
     private LocalDateTime updateDate;
 
     @OneToMany(mappedBy = "eipMCompany")
+            @JsonIgnore
     List<TurbineUser> turbineUsers;
 
     @OneToMany(mappedBy = "eipMCompany")
